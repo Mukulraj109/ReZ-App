@@ -97,9 +97,7 @@ app.get('/api/merchants', (req, res) => {
   res.json(merchants);
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
+
 
 app.get('/api/merchants/:id', (req, res) => {
   const merchant = merchants.find(m => m.id === parseInt(req.params.id));
