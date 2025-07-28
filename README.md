@@ -80,4 +80,42 @@ rez-app/
 | `/api/wallet/:userId` | GET | Get user's wallet information |
 | `/api/wallet/:userId/add` | POST | Add funds to user's wallet |
 
+## 🎯 Key Features
+
+- **Merchant Discovery**: Browse merchants with categories, ratings, and cashback offers
+- **Service Booking**: Select services and time slots for appointments
+- **Cashback System**: Earn ReZ Coins with every booking
+- **Wallet Management**: Track earnings and transaction history
+- **Responsive Design**: Optimized for mobile and desktop devices
+- **Real-time Updates**: Instant wallet updates after bookings
+
+## 🔍 Assumptions Made
+
+### User Management
+- **Single User System**: The app assumes one user (ID: 1) for simplicity
+- **No Authentication**: No login/logout functionality implemented
+- **Hardcoded User ID**: All bookings and wallet operations use userId = 1
+
+### Data Storage
+- **In-Memory Storage**: All data is stored in JavaScript arrays/objects
+- **No Database**: Data resets when the server restarts
+- **No Persistence**: Bookings and wallet data don't persist between sessions
+
+### Business Logic
+- **Simplified Cashback**: Cashback is calculated as `merchant.cashback * 10` ReZ Coins
+- **Currency Conversion**: 1 ReZ Coin = ₹0.10 for display purposes
+- **No Payment Processing**: Bookings are confirmed without actual payment
+- **Static Time Slots**: Predefined time slots for each merchant
+- **No Booking Conflicts**: Multiple users can book the same time slot
+
+### Technical Assumptions
+- **Development Environment**: Optimized for local development
+- **CORS Enabled**: All origins allowed for simplicity
+- **Error Handling**: Basic error handling implemented
+- **No Rate Limiting**: No API rate limiting or security measures
+
+### UI/UX Assumptions
+- **Modern Browsers**: Assumes support for modern CSS features
+- **High-Speed Internet**: Images loaded from external URLs (Pexels)
+- **Desktop/Mobile**: Responsive design for common screen sizes
 
