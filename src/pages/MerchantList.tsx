@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Star, ArrowRight, Coins, MapPin } from 'lucide-react';
 
+
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 interface Merchant {
   id: number;
   name: string;
@@ -25,7 +28,9 @@ export const MerchantList: React.FC = () => {
 
   const fetchMerchants = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/merchants');
+      const response = await axios.get(`${baseURL}/merchants`);
+    
+      
       setMerchants(response.data);
     } catch (error) {
       console.error('Error fetching merchants:', error);

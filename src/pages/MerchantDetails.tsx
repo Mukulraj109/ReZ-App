@@ -33,7 +33,7 @@ export const MerchantDetails: React.FC = () => {
 
   const fetchMerchant = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/merchants/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/merchants/${id}`);
       setMerchant(response.data);
       setSelectedService(response.data.services[0]);
     } catch (error) {
@@ -48,7 +48,7 @@ export const MerchantDetails: React.FC = () => {
 
     setBooking(true);
     try {
-      const response = await axios.post('http://localhost:3001/api/book', {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/book`, {
         merchantId: merchant.id,
         timeSlot: selectedTimeSlot,
         service: selectedService,
